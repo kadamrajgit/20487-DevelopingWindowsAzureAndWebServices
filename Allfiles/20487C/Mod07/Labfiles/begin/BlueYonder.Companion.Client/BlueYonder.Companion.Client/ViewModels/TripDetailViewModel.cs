@@ -318,6 +318,8 @@ namespace BlueYonder.Companion.Client.ViewModels
 
                     foreach (var flight in flights)
                     {
+                        if (e.QueryText != flight.Destination.City && e.QueryText != flight.Source.City) continue;
+
                         Reservation reservation = new Reservation
                         {
                             DepartureFlight = new FlightSchedule

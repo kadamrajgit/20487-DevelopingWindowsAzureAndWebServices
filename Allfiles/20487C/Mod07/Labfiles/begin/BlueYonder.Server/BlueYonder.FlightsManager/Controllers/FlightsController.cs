@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
@@ -31,7 +32,7 @@ namespace BlueYonder.FlightsManager.Controllers
         public ActionResult Schedules(int from, int to)
         {
             IEnumerable<FlightWithSchedulesDTO> flights = null;
-
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
             using (var proxy = new HttpClient() { BaseAddress = new Uri(_companionService) })
             {                
                 flights = proxy.GetAsync(

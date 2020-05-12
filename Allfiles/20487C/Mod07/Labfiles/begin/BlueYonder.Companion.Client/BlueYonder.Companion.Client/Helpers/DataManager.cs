@@ -4,6 +4,7 @@ using BlueYonder.Companion.Shared;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -174,7 +175,7 @@ namespace BlueYonder.Companion.Client.Helpers
         /// <returns></returns>
         public async Task<IEnumerable<Flight>> GetFlightsAsync(int source, int destination, DateTime? startDate)
         {
-            var uri = new Uri(string.Format(Addresses.GetFlightsUri, source, destination, startDate));
+            var uri = new Uri(string.Format(Addresses.GetFlightsUri, source, destination, startDate?.ToString("s", CultureInfo.InvariantCulture)));
             var response = await GetAsync(uri);
             return JsonSerializerHelper.Deserialize<IEnumerable<Flight>>(response.Content);
         }
