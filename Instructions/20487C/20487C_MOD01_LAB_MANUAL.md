@@ -126,7 +126,9 @@ The main tasks for this exercise are as follows:
 
 2. Deploy the web application to the Azure web app
 
-3. Delete the Azure SQL Database Server
+3. Configure Azure SQL to accept connections from other Azure services
+
+4. Delete the Azure SQL Database Server
 
 #### Task 1: Create a New Azure Web App
 
@@ -144,10 +146,19 @@ The main tasks for this exercise are as follows:
 5. After you've signed in with your Azure account, the subscription field will be populated automatically and the **BlueYonderWebsite**_yourInitials_ (replace _yourInitials_ with your initials) folder will appear below the group of fields.
 6. Expand **BlueYonderWebsite**_yourInitials_ folder and select the **BlueYonderWebsite**_yourInitials_ web app.
 7. Click **Ok** and the publishing process will start, it may take a few minutes.
-8. After the publish has finished, open a browser and navigate to **http://blueyonderwebsite[yourInitials].azurewebsites.net/api/locations**
-4. An XML or JSON describing a list of locations will appear. (On Chrome - XML, Edge and Firefox - JSON)
+    > **Note:** Since the Azure SQL server isn't configured to accept connections from other Azure services, the address above will yield an error.
 
-#### Task 3: Delete the Azure SQL Database Server
+#### Task 3: Configure Azure SQL to accept connections from other Azure services
+
+1. Open Azure portal at **https://portal.azure.com**.
+2. Navigate to the SQL Server you created earlier.
+3. In the SQL Server window, select **Firewalls and virtual networks**.
+4. Change the **Allow Azure services and resources to access this server** toggle to **Yes**.
+5. Click **Save**.
+6. Open a browser and navigate to **http://blueyonderwebsite[yourInitials].azurewebsites.net/api/locations**
+7. An XML or JSON describing a list of locations will appear. (On Chrome - XML, Edge and Firefox - JSON).
+
+#### Task 4: Delete the Azure SQL Database Server
 
 1. Open a browser and navigate to the Azure portal at **https://portal.azure.com**.
 2. Open the SQL Server you created in the previous step by opening it through the **All Resources** pane.
