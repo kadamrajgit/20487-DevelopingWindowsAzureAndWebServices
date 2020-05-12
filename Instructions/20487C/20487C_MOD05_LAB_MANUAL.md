@@ -301,9 +301,12 @@ The main tasks for this exercise are as follows:
 #### Task 4: Debug the WCF service with the client app
 
 1. Place a breakpoint on the line of code that calls the **CreateReservationOnBackendSystem** method, and start debugging the web application.
-2. Open the **BlueYonder.Companion.Client** solution from the **[repository root]\AllFiles\20487C\Mod05\LabFiles\begin** folder, and run it without debugging.
-3. Search for **Paris** and purchase a new trip from _Seattle_ to _Paris_.
-4. Debug the **BlueYonder.Companion** and **BlueYonder.Server** solutions. Verify that the ASP.NET Web API service is able to call the WCF service. Continue running both solutions and verify that the client is showing the new reservation.
+2. After the browser opens, copy the URL from the address bar.
+3. Open the **BlueYonder.Companion.Client** solution from the **[repository root]\AllFiles\20487C\Mod05\LabFiles\begin** folder.
+4. In the **BlueYonder.Companion.Shared** project, open the **Addresses** class, and then set the **BaseUri** property to the URL you copied in step 2.
+5. Run the **BlueYonder.Companion.Client** without debugging.
+5. Search for **Paris** and purchase a new trip from _Seattle_ to _Paris_.
+6. Debug the **BlueYonder.Companion** and **BlueYonder.Server** solutions. Verify that the ASP.NET Web API service is able to call the WCF service. Continue running both solutions and verify that the client is showing the new reservation.
 
 >**Results**: After you complete this exercise, you will be able to run the Blue Yonder Companion client application and purchase a trip.
 
