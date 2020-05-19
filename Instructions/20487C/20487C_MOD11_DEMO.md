@@ -49,7 +49,7 @@ Wherever you see a path to file starting with **[repository root]**, replace it 
    ```cs
         using System.Threading.Tasks;
         using Microsoft.Owin.Security.Notifications;
-        using Microsoft.IdentityModel.Protocols;
+        using Microsoft.IdentityModel.Protocols.OpenIdConnect;
    ```
 34.	Under **PostLogoutRedirectUri**, add the following piece of code:
    ```cs
